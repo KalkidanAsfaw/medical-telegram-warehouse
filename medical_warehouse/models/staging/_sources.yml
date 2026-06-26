@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw Telegram messages loaded from the data lake by src/load_raw.py."
+    schema: raw
+    tables:
+      - name: telegram_messages
+        description: "One row per scraped Telegram message, fields preserved from the API."
+        columns:
+          - name: message_id
+            description: "Telegram message id (unique within a channel)."
+          - name: channel_name
+            description: "Source channel username."

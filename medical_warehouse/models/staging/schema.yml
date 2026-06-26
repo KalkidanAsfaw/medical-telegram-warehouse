@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_telegram_messages
+    description: "Cleaned, typed Telegram messages: one row per message, empties removed, with message_length and has_image added."
+    columns:
+      - name: message_id
+        description: "Telegram message id (unique within a channel)."
+        tests:
+          - not_null
+      - name: channel_name
+        description: "Lower-cased source channel username."
+        tests:
+          - not_null
+      - name: message_date
+        description: "Message timestamp (timestamptz)."
+        tests:
+          - not_null
+      - name: message_length
+        description: "Character length of the cleaned message text."
+      - name: has_image
+        description: "True when an image was downloaded for the message."
+      - name: views
+        description: "View count (0 when unknown)."
+      - name: forwards
+        description: "Forward count (0 when unknown)."

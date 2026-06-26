@@ -44,3 +44,6 @@ tmp_dagster_home_*/
 
 # Keep folder placeholders
 !**/.gitkeep
+
+# dbt user-local file
+medical_warehouse/.user.yml
