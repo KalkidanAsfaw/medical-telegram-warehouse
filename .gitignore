@@ -1,0 +1,46 @@
+# Secrets
+.env
+*.session
+*.session-journal
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.python-version
+
+# Data lake & artifacts (do not commit scraped data / images / models)
+data/raw/
+data/processed/
+*.jpg
+*.jpeg
+*.png
+yolov8n.pt
+*.pt
+detections*.csv
+
+# Logs
+logs/*.log
+
+# dbt
+medical_warehouse/target/
+medical_warehouse/dbt_packages/
+medical_warehouse/logs/
+
+# Dagster
+.dagster/
+tmp_dagster_home_*/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.idea/
+
+# Keep folder placeholders
+!**/.gitkeep
