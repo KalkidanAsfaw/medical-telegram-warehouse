@@ -99,7 +99,3 @@ pip install -r requirements.txt
    schedule + failure alerts; UI at `:3000`.
 
 ---
-
-## Key dates
-- **Interim** (Tasks 1–2): Sun 28 Jun 2026, 20:00 UTC
-- **Final** (all tasks + report): Tue 30 Jun 2026, 20:00 UTC
