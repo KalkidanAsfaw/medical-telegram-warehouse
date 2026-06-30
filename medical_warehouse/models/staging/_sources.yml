@@ -12,3 +12,14 @@ sources:
             description: "Telegram message id (unique within a channel)."
           - name: channel_name
             description: "Source channel username."
+      - name: image_detections
+        description: "YOLOv8 detection results from src/yolo_detect.py; one row per detected object."
+        columns:
+          - name: message_id
+            description: "Telegram message id the image belongs to."
+          - name: detected_class
+            description: "COCO class name of the detected object (null when nothing detected)."
+          - name: confidence_score
+            description: "Detection confidence (0-1)."
+          - name: image_category
+            description: "Derived category: promotional / product_display / lifestyle / other."
