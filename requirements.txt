@@ -17,9 +17,9 @@ pillow==10.3.0
 pandas==2.2.2
 
 # Analytical API (Task 4)
-fastapi==0.111.0
-uvicorn[standard]==0.30.0
-pydantic==2.7.0
+fastapi==0.138.2
+uvicorn[standard]==0.49.0
+pydantic==2.13.4
 
 # Orchestration (Task 5)
 dagster==1.8.0
