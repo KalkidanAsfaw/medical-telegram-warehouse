@@ -10,7 +10,9 @@ sqlalchemy==2.0.30
 dbt-postgres==1.8.2
 
 # Object detection (Task 3)
-ultralytics==8.2.0
+# For CPU-only torch (no CUDA), first run:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+ultralytics==8.4.83
 pillow==10.3.0
 pandas==2.2.2
 

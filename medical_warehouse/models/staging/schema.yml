@@ -24,3 +24,16 @@ models:
         description: "View count (0 when unknown)."
       - name: forwards
         description: "Forward count (0 when unknown)."
+
+  - name: stg_image_detections
+    description: "Cleaned YOLO detection results: one row per detected object, typed and standardized."
+    columns:
+      - name: message_id
+        description: "Telegram message id the image belongs to."
+        tests:
+          - not_null
+      - name: image_category
+        description: "Derived category: promotional / product_display / lifestyle / other."
+        tests:
+          - accepted_values:
+              values: ['promotional', 'product_display', 'lifestyle', 'other']

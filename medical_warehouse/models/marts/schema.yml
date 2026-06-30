@@ -69,3 +69,34 @@ models:
         description: "Character length of the message text."
       - name: has_image
         description: "Whether an image was downloaded for the message."
+
+  - name: fct_image_detections
+    description: "YOLOv8 image detections joined to the message fact; one row per detected object, with channel and date FKs."
+    columns:
+      - name: message_id
+        description: "Telegram message id the detection belongs to."
+        tests:
+          - not_null
+      - name: channel_key
+        description: "FK to dim_channels."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_key
+      - name: date_key
+        description: "FK to dim_dates."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: date_key
+      - name: detected_class
+        description: "COCO class of the detected object (null when nothing detected)."
+      - name: confidence_score
+        description: "Detection confidence (0-1)."
+      - name: image_category
+        description: "Derived category for the image."
+        tests:
+          - accepted_values:
+              values: ['promotional', 'product_display', 'lifestyle', 'other']
