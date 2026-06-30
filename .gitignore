@@ -47,3 +47,9 @@ tmp_dagster_home_*/
 
 # dbt user-local file
 medical_warehouse/.user.yml
+
+# Local backup folder
+backup/
+
+# Interim report (local)
+reports/
